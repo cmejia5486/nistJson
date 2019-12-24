@@ -112,7 +112,8 @@ public class JsonProcessor {
         Set<String> uniqueProducts = new HashSet<String>();
         DecimalFormat df = new DecimalFormat("#.00000");
         StringBuilder sb = new StringBuilder();
-        sb.append("ENTRY; SUMMARY; ATTACK_VECTOR; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICITY_FOR_HEALTH \n");
+
+        sb.append("ENTRY; SUMMARY; ATTACK_VECTOR; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; ;EXPLOITABILITY; OBTAIN_ALL_PRIVILLEGE; OBTAIN_USER_PRIVILLEGE; OBTAIN_OTHER_PRIVILLEGE; USER_INTERACTION_REQUIRED; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICITY_FOR_HEALTH \n");
         //generate total products
         for (Entry cveEntry : cveEntries) {
             for (String vunerableSoftware : cveEntry.getVulnerableSoftware()) {
@@ -153,6 +154,26 @@ public class JsonProcessor {
 
             // COL 9 (AVAILABILITY)
             sb.append(entry.getAvailability());
+            sb.append(";");
+
+            // COL 9 (EXPLOITABILITY)
+            sb.append(entry.getExploitability());
+            sb.append(";");
+
+            // COL 9 (OBTAIN_ALL_PRIVILLEGE)
+            sb.append(entry.getObtainAllPrivilege());
+            sb.append(";");
+
+            // COL 9 (OBTAIN_USER_PRIVILLEGE)
+            sb.append(entry.getObtainUserPrivilege());
+            sb.append(";");
+
+            // COL 9 (OBTAIN_OTHER_PRIVILLEGE)
+            sb.append(entry.getObtainOtherPrivilege());
+            sb.append(";");
+
+            // COL 9 (USER_INTERACTION_REQUIRED)
+            sb.append(entry.getUserInteractionRequired());
             sb.append(";");
 
             // COL 3 (SCORE)
