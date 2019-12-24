@@ -113,7 +113,7 @@ public class JsonProcessor {
         DecimalFormat df = new DecimalFormat("#.00000");
         StringBuilder sb = new StringBuilder();
 
-        sb.append("ENTRY; SUMMARY; ATTACK_VECTOR; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; ;EXPLOITABILITY; OBTAIN_ALL_PRIVILLEGE; OBTAIN_USER_PRIVILLEGE; OBTAIN_OTHER_PRIVILLEGE; USER_INTERACTION_REQUIRED; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICITY_FOR_HEALTH \n");
+        sb.append("ENTRY; SUMMARY; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; ;EXPLOITABILITY; OBTAIN_ALL_PRIVILLEGE; OBTAIN_USER_PRIVILLEGE; OBTAIN_OTHER_PRIVILLEGE; USER_INTERACTION_REQUIRED; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICITY_FOR_HEALTH \n");
         //generate total products
         for (Entry cveEntry : cveEntries) {
             for (String vunerableSoftware : cveEntry.getVulnerableSoftware()) {
@@ -132,31 +132,27 @@ public class JsonProcessor {
             sb.append(entry.getSummary().replace(";", ","));
             sb.append(";");
 
-            // COL 4 (ATTACK_VECTOR)
-            sb.append(entry.getAttackVector());
-            sb.append(";");
-
-            // COL 5 (ACCESS_COMPLEXITY)
+            // COL 3 (ACCESS_COMPLEXITY)
             sb.append(entry.getAccessComplexity());
             sb.append(";");
 
-            // COL 6 (USER_AUTHENTICATION)
+            // COL 4 (USER_AUTHENTICATION)
             sb.append(entry.getAuthentication());
             sb.append(";");
 
-            // COL 7 (CONFIDENTIALITY)
+            // COL 5 (CONFIDENTIALITY)
             sb.append(entry.getConfidentiality());
             sb.append(";");
 
-            // COL 8 (INTEGRITY)
+            // COL 6 (INTEGRITY)
             sb.append(entry.getIntegrity());
             sb.append(";");
 
-            // COL 9 (AVAILABILITY)
+            // COL 7 (AVAILABILITY)
             sb.append(entry.getAvailability());
             sb.append(";");
 
-            // COL 9 (EXPLOITABILITY)
+            // COL 8 (EXPLOITABILITY)
             sb.append(entry.getExploitability());
             sb.append(";");
 
@@ -164,37 +160,37 @@ public class JsonProcessor {
             sb.append(entry.getObtainAllPrivilege());
             sb.append(";");
 
-            // COL 9 (OBTAIN_USER_PRIVILLEGE)
+            // COL 10 (OBTAIN_USER_PRIVILLEGE)
             sb.append(entry.getObtainUserPrivilege());
             sb.append(";");
 
-            // COL 9 (OBTAIN_OTHER_PRIVILLEGE)
+            // COL 11 (OBTAIN_OTHER_PRIVILLEGE)
             sb.append(entry.getObtainOtherPrivilege());
             sb.append(";");
 
-            // COL 9 (USER_INTERACTION_REQUIRED)
+            // COL 12 (USER_INTERACTION_REQUIRED)
             sb.append(entry.getUserInteractionRequired());
             sb.append(";");
 
-            // COL 3 (SCORE)
+            // COL 13 (SCORE)
             sb.append((entry.getScore() + "").replace(".", ","));
             sb.append(";");
 
-            // COL 10 (prodducts affected)
+            // COL 14 (prodducts affected)
             sb.append(entry.getVulnerableSoftware().size());
             sb.append(";");
 
-            // COL 11 (presence)
+            // COL 15 (presence)
             a = Double.parseDouble(entry.getVulnerableSoftware().size() + "");
             b = Double.parseDouble(uniqueProducts.size() + "");
             sb.append(df.format(BigDecimal.valueOf(a / b)).replace(".", ","));
             sb.append(";");
 
-            // COL 12 (impact)
+            // COL 16 (impact)
             sb.append(df.format(BigDecimal.valueOf(entry.getScore() * (a / b))).replace(".", ","));
             sb.append(";");
 
-            // COL 13 (CRITICITY_FOR_HEALTH)
+            // COL 17 (CRITICITY_FOR_HEALTH)
             sb.append(entry.getRankingForHealth() + "");
             sb.append("\n");
         }
