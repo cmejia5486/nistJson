@@ -113,7 +113,7 @@ public class JsonProcessor {
         DecimalFormat df = new DecimalFormat("#.00000");
         StringBuilder sb = new StringBuilder();
 
-        sb.append("ENTRY; SUMMARY; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; ;EXPLOITABILITY; OBTAIN_ALL_PRIVILLEGE; OBTAIN_USER_PRIVILLEGE; OBTAIN_OTHER_PRIVILLEGE; USER_INTERACTION_REQUIRED; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICITY_FOR_HEALTH \n");
+        sb.append("ENTRY; SUMMARY; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; EXPLOITABILITY; OBTAIN_ALL_PRIVILLEGE; OBTAIN_USER_PRIVILLEGE; OBTAIN_OTHER_PRIVILLEGE; USER_INTERACTION_REQUIRED; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICITY_FOR_HEALTH \n");
         //generate total products
         for (Entry cveEntry : cveEntries) {
             for (String vunerableSoftware : cveEntry.getVulnerableSoftware()) {
@@ -135,11 +135,12 @@ public class JsonProcessor {
             // COL 3 (ACCESS_COMPLEXITY)
             sb.append(entry.getAccessComplexity());
             sb.append(";");
-
+            
             // COL 4 (USER_AUTHENTICATION)
             sb.append(entry.getAuthentication());
             sb.append(";");
 
+            
             // COL 5 (CONFIDENTIALITY)
             sb.append(entry.getConfidentiality());
             sb.append(";");
