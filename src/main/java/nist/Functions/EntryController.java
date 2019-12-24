@@ -134,7 +134,7 @@ public class EntryController {
                 entry.setObtainUserPrivilege(getobtainUserPrivilege(obj));
                 entry.setObtainOtherPrivilege(getobtainOtherPrivilege(obj));
                 entry.setUserInteractionRequired(getuserInteractionRequired(obj));
-                entry.setVulnerableSoftware(getVulnerableSoftware(obj));
+                entry.setVulnerableSoftware(getVulnerableSoftware1(obj));
                 entry.setCategory(getCategory(obj));
                 entry.setRankingForHealth(getRankingforHealth(IdVulnerabilityTmp));
             } else {
@@ -303,10 +303,10 @@ public class EntryController {
         return response;
     }
 
-    private ArrayList<String> getVulnerableSoftware(JsonObject obj) {
+    private ArrayList<String> getVulnerableSoftware1(JsonObject obj) {
         HashSet<String> respuesta = new HashSet<>();
         JsonArray tmp;
-        JsonArray tmp1;
+        JsonArray tmp1, tmp2;
         if (obj.get("configurations").getAsJsonObject() != null) {
             tmp = obj.get("configurations").getAsJsonObject().get("nodes").getAsJsonArray();
             if (tmp != null && tmp.size() > 0) {
@@ -317,6 +317,20 @@ public class EntryController {
                             for (JsonElement jsonElement1 : tmp1) {
                                 respuesta.add(jsonElement1.getAsJsonObject().get("cpe23Uri").getAsString());
                             }
+                        }
+                    } else {
+                        tmp1 = jsonElement.getAsJsonObject().get("children").getAsJsonArray();
+                        if (tmp1 != null && tmp1.size() > 0) {
+                            for (JsonElement jsonElement1 : tmp1) {
+                                tmp2 = jsonElement1.getAsJsonObject().get("cpe_match").getAsJsonArray();
+                                if (tmp2 != null && tmp2.size() > 0) {
+                                    for (JsonElement jsonElement2 : tmp2) {
+                                        respuesta.add(jsonElement2.getAsJsonObject().get("cpe23Uri").getAsString());
+                                    }
+                                }
+
+                            }
+
                         }
                     }
                 }
