@@ -113,7 +113,7 @@ public class JsonProcessor {
         DecimalFormat df = new DecimalFormat("#.00000");
         StringBuilder sb = new StringBuilder();
 
-        sb.append("ENTRY; SUMMARY; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; EXPLOITABILITY; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICITY_FOR_HEALTH \n");
+        sb.append("ENTRY; SUMMARY; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; EXPLOITABILITY; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICALITY_FOR_HEALTH \n");
         //generate total products
         for (Entry cveEntry : cveEntries) {
             for (String vunerableSoftware : cveEntry.getVulnerableSoftware()) {
