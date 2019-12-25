@@ -107,7 +107,6 @@ public class JsonProcessor {
     }
 
     public void cveToCSV(String namefile, boolean removeFileIfExists) throws IOException {
-        Integer i = 0;
         Double a, b;
         Set<String> uniqueProducts = new HashSet<String>();
         DecimalFormat df = new DecimalFormat("#.00000");
@@ -123,8 +122,6 @@ public class JsonProcessor {
         
 
         for (Entry entry : cveEntries) {
-            //acumulador total de filas para sacar el average de disponibility ;etc
-            i = i + 1;
             // COL 1 (entry)
             sb.append(entry.getID());
             sb.append(";");
@@ -207,7 +204,6 @@ public class JsonProcessor {
 
         for (Category c : cweCategories) {
 
-            //acumulador total de filas para sacar el average de disponibility ;etc
             // COL 1 (category)
             sb.append(c.getID());
             sb.append(";");
