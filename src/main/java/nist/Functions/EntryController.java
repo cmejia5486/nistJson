@@ -27,9 +27,9 @@ public class EntryController {
     private String descriptionTmp;
     private String summaryTmp;
     private String IdVulnerabilityTmp;
-    List<String> exclutions;
+    List<String> exclusions;
     List<Entry> healthValues;
-    private final String exclutionPath;
+    private final String exclusionPath;
     private final String healthPath;
 
     public Entry getEntry() {
@@ -41,28 +41,28 @@ public class EntryController {
     }
 
     public EntryController() {
-        exclutions = new ArrayList<>();
+        exclusions = new ArrayList<>();
         healthValues = new ArrayList<>();
-        exclutionPath = "Exclutions/exclutions.txt";
+        exclusionPath = "Exclusions/exclusions.txt";
         healthPath = "Health/metrics.csv";
-        obtainExclutions();
+        obtainExclusions();
         obtainHealthranking();
     }
 
-    private void obtainExclutions() {
+    private void obtainExclusions() {
         String[] parts;
         try {
-            File inclutions = new File(exclutionPath);
+            File inclutions = new File(exclusionPath);
             BufferedReader inputI = new BufferedReader(new FileReader(inclutions));
             String readLine = inputI.readLine();
             while (readLine != null) {
                 parts = readLine.split(";");
-                exclutions.add(parts[0]);
+                exclusions.add(parts[0]);
                 readLine = inputI.readLine();
             }
             inputI.close();
         } catch (Exception e) {
-            System.out.println("Can't access exclution file" + e);
+            System.out.println("Can't access exclusion file" + e);
         }
     }
 
@@ -88,7 +88,7 @@ public class EntryController {
         }
     }
 
-    private Integer verifyKeyAndExclutions(List<String> keys) {
+    private Integer verifyKeyAndExclusions(List<String> keys) {
         Integer response = 0;
         //check if has keywords
         for (String key : keys) {
@@ -97,9 +97,9 @@ public class EntryController {
                 break;
             }
         }
-        //check exclutions
-        for (String exclution : exclutions) {
-            if (exclution.equals(IdVulnerabilityTmp)) {
+        //check exclusions
+        for (String exclusion : exclusions) {
+            if (exclusion.equals(IdVulnerabilityTmp)) {
                 response = 0;
                 break;
             }
@@ -113,7 +113,7 @@ public class EntryController {
             summaryTmp = getSummary(obj);
             IdVulnerabilityTmp = getIdVulnerability(obj);
             //looks for keys in order to find vulnerabilities
-            if (verifyKeyAndExclutions(keys).equals(1)) {
+            if (verifyKeyAndExclusions(keys).equals(1)) {
                 entry = new Entry();
                 entry.setID(IdVulnerabilityTmp);
                 entry.setSummary(summaryTmp);
