@@ -57,9 +57,7 @@ public class EntryController {
             String readLine = inputI.readLine();
             while (readLine != null) {
                 parts = readLine.split(";");
-                //System.out.println("exclusión: " + parts[0]);
                 exclutions.add(parts[0]);
-                //System.out.println("la exclusion: " + parts[0]);
                 readLine = inputI.readLine();
             }
             inputI.close();
@@ -152,18 +150,18 @@ public class EntryController {
     }
 
     private String getCategory(JsonObject obj) {
-        String respuesta = "";
+        String response = "";
         JsonArray tmp = obj.get("cve").getAsJsonObject().get("problemtype").getAsJsonObject().get("problemtype_data").getAsJsonArray();
         JsonArray tmp1;
         for (JsonElement jsonElement : tmp) {
             tmp1 = jsonElement.getAsJsonObject().get("description").getAsJsonArray();
             if (tmp1 != null) {
                 for (JsonElement jsonElement1 : tmp1) {
-                    respuesta = jsonElement1.getAsJsonObject().get("value").getAsString();
+                    response = jsonElement1.getAsJsonObject().get("value").getAsString();
                 }
             }
         }
-        return respuesta;
+        return response;
     }
 
     private String getSummary(JsonObject obj) {
@@ -304,7 +302,7 @@ public class EntryController {
     }
 
     private ArrayList<String> getVulnerableSoftware1(JsonObject obj) {
-        HashSet<String> respuesta = new HashSet<>();
+        HashSet<String> response = new HashSet<>();
         JsonArray tmp;
         JsonArray tmp1, tmp2;
         if (obj.get("configurations").getAsJsonObject() != null) {
@@ -315,7 +313,7 @@ public class EntryController {
                         tmp1 = jsonElement.getAsJsonObject().get("cpe_match").getAsJsonArray();
                         if (tmp1.size() > 0) {
                             for (JsonElement jsonElement1 : tmp1) {
-                                respuesta.add(jsonElement1.getAsJsonObject().get("cpe23Uri").getAsString());
+                                response.add(jsonElement1.getAsJsonObject().get("cpe23Uri").getAsString());
                             }
                         }
                     } else {
@@ -325,7 +323,7 @@ public class EntryController {
                                 tmp2 = jsonElement1.getAsJsonObject().get("cpe_match").getAsJsonArray();
                                 if (tmp2 != null && tmp2.size() > 0) {
                                     for (JsonElement jsonElement2 : tmp2) {
-                                        respuesta.add(jsonElement2.getAsJsonObject().get("cpe23Uri").getAsString());
+                                        response.add(jsonElement2.getAsJsonObject().get("cpe23Uri").getAsString());
                                     }
                                 }
 
@@ -337,7 +335,7 @@ public class EntryController {
             }
         }
 
-        return new ArrayList<>(respuesta);
+        return new ArrayList<>(response);
     }
 
 }
