@@ -1,0 +1,8 @@
+ENTRY; SUMMARY; ATTACK_VECTOR; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICITY_FOR_HEALTH 
+CVE-2012-6660;GE Healthcare Precision MPi has a password of (1) orion for the serviceapp user, (2) orion for the clinical operator user, and (3) PlatinumOne for the administrator user, which has unspecified impact and attack vectors.  NOTE: it is not clear whether these passwords are default, hardcoded, or dependent on another system or product that requires a fixed value.;NETWORK;LOW;NONE;COMPLETE;COMPLETE;COMPLETE;10,0;1;,25000;2,50000;1
+CVE-2012-6693;GE Healthcare Centricity PACS 4.0 Server has a default password of (1) nasro for the nasro (ReadOnly) user and (2) nasrw for the nasrw (Read/Write) user, which has unspecified impact and attack vectors.;NETWORK;LOW;NONE;COMPLETE;COMPLETE;COMPLETE;10,0;1;,25000;2,50000;1
+CVE-2012-6694;GE Healthcare Centricity PACS Workstation 4.0 and 4.0.1, and Server 4.0, has a password of 2charGE for the geservice account, which has unspecified impact and attack vectors related to TimbuktuPro.  NOTE: it is not clear whether this password is default, hardcoded, or dependent on another system or product that requires it.;NETWORK;LOW;NONE;COMPLETE;COMPLETE;COMPLETE;10,0;3;,75000;7,50000;1
+CVE-2012-6695;GE Healthcare Centricity PACS Workstation 4.0 and 4.0.1 has a password of ddpadmin for the ddpadmin user, which has unspecified impact and attack vectors.  NOTE: it is not clear whether this password is default, hardcoded, or dependent on another system or product that requires a fixed value.;NETWORK;LOW;NONE;COMPLETE;COMPLETE;COMPLETE;10,0;2;,50000;5,00000;1
+
+
+TOTAL PRODUCTS; 4

@@ -1,0 +1,7 @@
+CATEGORY; SUMMARY; NUMBER_OF_VULNERABILITIES; AVERAGE_SCORE; PRESENCE; IMPACT 
+CWE-346;Origin Validation Error. The software does not properly verify that the source of data or communication is valid. ;1;6,0;,33330;1,99980;
+CWE-306;Missing Authentication for Critical Function. The software does not perform any authentication for functionality that requires a provable user identity or consumes a significant amount of resources.;1;9,0;,33330;2,99970;
+CWE-255;Weaknesses in this category are related to the management of credentials.;1;1,9;,33330;,63330;
+
+
+TOTAL PRODUCTS; 3

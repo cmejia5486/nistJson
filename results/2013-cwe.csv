@@ -1,0 +1,7 @@
+CATEGORY; SUMMARY; NUMBER_OF_VULNERABILITIES; AVERAGE_SCORE; PRESENCE; IMPACT 
+CWE-264;Authentication Bypass by Capture-replay. A capture-replay flaw exists when the design of the software makes it possible for a malicious user to sniff network traffic and bypass authentication by replaying it to the server in question to the same effect as the original message (or with minor changes). Capture-replay attacks are common and can be difficult to defeat without cryptography. They are a subset of network injection attacks that rely on observing previously-sent valid commands, then changing them slightly if necessary and resending the same commands to the server.;1;6,5;,11110;,72220;
+NVD-CWE-noinfo;Category with no information;4;3,2;,44440;1,42210;
+CWE-255;Weaknesses in this category are related to the management of credentials.;4;8,725;,44440;3,87740;
+
+
+TOTAL PRODUCTS; 9

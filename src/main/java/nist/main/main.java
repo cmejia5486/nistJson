@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+package nist.main;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -27,12 +27,12 @@ public class main {
             keys.add("HEALTH");
             keys.add("MEDIC");
             //load  json file
-            JsonObject jsonObject = new JsonParser().parse(new FileReader(Functions.FILE2019)).getAsJsonObject();
+            JsonObject jsonObject = new JsonParser().parse(new FileReader(Functions.FILETOTAL)).getAsJsonObject();
             //create a json processor for having data
             JsonProcessor jsonProcessor = new JsonProcessor(jsonObject, keys);
             //export data to csv format
-            jsonProcessor.cveToCSV("results/2019-cve.csv", true);
-            jsonProcessor.cweToCSV("results/2019-cwe.csv", true);
+            jsonProcessor.cveToCSV("results/TOTAL-cve.csv", true);
+            jsonProcessor.cweToCSV("results/TOTAL-cwe.csv", true);
 
         } catch (Exception e) {
             System.out.println("error: " + e);

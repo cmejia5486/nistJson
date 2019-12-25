@@ -1,0 +1,5 @@
+ENTRY; SUMMARY; ATTACK_VECTOR; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICITY_FOR_HEALTH 
+CVE-2005-2285;WebEOC before 6.0.2 stores sensitive information in locations such as URIs, web pages, and configuration files, which allows remote attackers to obtain information such as Usernames, Passwords, Emergency information, medical information, and system configuration.;NETWORK;LOW;NONE;PARTIAL;NONE;NONE;5,0;1;1,00000;5,00000;0
+
+
+TOTAL PRODUCTS; 1
