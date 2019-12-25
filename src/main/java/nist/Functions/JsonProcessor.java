@@ -120,6 +120,7 @@ public class JsonProcessor {
                 uniqueProducts.add(vunerableSoftware);
             }
         }
+        
 
         for (Entry entry : cveEntries) {
             //acumulador total de filas para sacar el average de disponibility ;etc
