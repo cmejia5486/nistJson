@@ -31,6 +31,7 @@ public class Functions {
     public static final String FILE2017 = "JsonData/nvdcve-1.1-2017.json";
     public static final String FILE2018 = "JsonData/nvdcve-1.1-2018.json";
     public static final String FILE2019 = "JsonData/nvdcve-1.1-2019.json";
+    public static final String FILE2020 = "JsonData/nvdcve-1.1-2020.json";
     public static final String FILETOTAL = "JsonData/Total.json";
 
     public static String CheckString(String value) {

@@ -1,5 +1,5 @@
-ENTRY; SUMMARY; ATTACK_VECTOR; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICITY_FOR_HEALTH 
-CVE-2009-5143;GE Healthcare Discovery 530C has a password of #bigguy1 for the (1) acqservice user and (2) wsservice user of the Xeleris System, which has unspecified impact and attack vectors.  NOTE: it is not clear whether this password is default, hardcoded, or dependent on another system or product that requires a fixed value.;NETWORK;LOW;NONE;COMPLETE;COMPLETE;COMPLETE;10,0;1;1,00000;10,00000;1
+ENTRY; SUMMARY; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; EXPLOITABILITY; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICALITY_FOR_HEALTH 
+CVE-2009-5143;GE Healthcare Discovery 530C has a password of #bigguy1 for the (1) acqservice user and (2) wsservice user of the Xeleris System, which has unspecified impact and attack vectors.  NOTE: it is not clear whether this password is default, hardcoded, or dependent on another system or product that requires a fixed value.;LOW;NONE;COMPLETE;COMPLETE;COMPLETE;10.0;10,0;1;1,00000;10,00000;1
 
 
 TOTAL PRODUCTS; 1
