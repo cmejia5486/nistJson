@@ -145,3 +145,4 @@ CVE-2020-11676;0;Cerner medico 26.00 está diseñado para la asistencia en rehabil
 CVE-2020-11677;0;Cerner medico 26.00 está diseñado para la asistencia en rehabilitación física, no suministra ninguna sustancia médica por lo que no podrìa comprometer la vida al no ser un sistema de apoyo vital
 CVE-2020-12039;1; Sigma Spectrum Infusion System v's6.x es una bomba de ifución que puede suministrar de manera errática la dosis de medicina para un paciente, en este sentido, al considerarse de apoyo vital para un paciente, compromete la vida
 CVE-2020-8788;0;Synaptive Medical ClearCanvas ImageServer 3.0 es usado para obtener imágenes representadas de un servidor de imágenes, en este sentido no es directamente de apoyo vital para el paciente, por lo que no compromete a su salud.
+CVE-2019-18254;1;CardioMessenger Smart se encarga de recibir los datos del dispositivo médico implantado en el paciente, su inexactitud y falla puede comprometer la salud de paciente 

@@ -58,3 +58,5 @@ CVE-2020-1324;Esta vulnerabilidad se refiere a elevación de privilegios en Windo
 CVE-2020-2093;Jenkins Health Advisor by CloudBees Plugin 3.0 está orientado a notificar el estado de los equipos mas nó monitorear la salud de un paciente
 CVE-2020-2094;Jenkins Health Advisor by CloudBees Plugin 3.0 está orientado a notificar el estado de los equipos mas nó monitorear la salud de un paciente
 CVE-2020-8572;Element HealthTools no es un sistema de apoyo al paciente sino por el contrario se utiliza para monitorear aplicativos y sistemas.
+CVE-2019-17390;Outlook add-in in Pronestor Planner es un monitor de salud de sistemas que no están relacionados propiamente con salud
+CVE-2020-11590;Se refiere a un software de planificación CIPPlanner y al no estar realcionado directamente con el ámbito médico, se lo descarta

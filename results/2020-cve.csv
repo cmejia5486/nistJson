@@ -1,11 +1,10 @@
 ENTRY; SUMMARY; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; EXPLOITABILITY; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICALITY_FOR_HEALTH 
-CVE-2020-11590;An issue was discovered in CIPPlanner CIPAce 9.1 Build 2019092801. An unauthenticated attacker can make an HTTP GET request to HealthPage.aspx and obtain the internal server name.;LOW;NONE;PARTIAL;NONE;NONE;10.0;5,0;1;,16667;,83333;-1
-CVE-2020-11674;Cerner medico 26.00 allows variable reuse, possibly causing data corruption.;LOW;NONE;PARTIAL;PARTIAL;PARTIAL;6.5;5,8;1;,16667;,96667;0
-CVE-2020-11675;Cerner medico 26.00 has a Local Buffer Overflow (issue 1 of 3).;LOW;NONE;PARTIAL;PARTIAL;PARTIAL;6.5;5,8;1;,16667;,96667;0
-CVE-2020-11676;Cerner medico 26.00 has a Local Buffer Overflow (issue 2 of 3).;LOW;NONE;PARTIAL;PARTIAL;PARTIAL;6.5;5,8;1;,16667;,96667;0
-CVE-2020-11677;Cerner medico 26.00 has a Local Buffer Overflow (issue 3 of 3).;LOW;NONE;PARTIAL;PARTIAL;PARTIAL;6.5;5,8;1;,16667;,96667;0
-CVE-2020-12039;Baxter Sigma Spectrum Infusion Pumps Sigma Spectrum Infusion System v's6.x model 35700BAX & Baxter Spectrum Infusion System v's8.x model 35700BAX2 contain hardcoded passwords when physically entered on the keypad provide access to biomedical menus including device settings, view calibration values, network configuration of Sigma Spectrum WBM if installed.;LOW;NONE;PARTIAL;NONE;NONE;3.9;2,1;3;,50000;1,05000;1
-CVE-2020-8788;Synaptive Medical ClearCanvas ImageServer 3.0 Alpha allows XSS (and HTML injection) via the Default.aspx UserName parameter. NOTE: the issues/227 reference does not imply that the affected product can be downloaded from GitHub. It was simply a convenient location for a public bug report.;MEDIUM;NONE;NONE;PARTIAL;NONE;8.6;4,3;1;,16667;,71667;0
+CVE-2020-11674;Cerner medico 26.00 allows variable reuse, possibly causing data corruption.;LOW;NONE;PARTIAL;PARTIAL;PARTIAL;6.5;5,8;1;,20000;1,16000;0
+CVE-2020-11675;Cerner medico 26.00 has a Local Buffer Overflow (issue 1 of 3).;LOW;NONE;PARTIAL;PARTIAL;PARTIAL;6.5;5,8;1;,20000;1,16000;0
+CVE-2020-11676;Cerner medico 26.00 has a Local Buffer Overflow (issue 2 of 3).;LOW;NONE;PARTIAL;PARTIAL;PARTIAL;6.5;5,8;1;,20000;1,16000;0
+CVE-2020-11677;Cerner medico 26.00 has a Local Buffer Overflow (issue 3 of 3).;LOW;NONE;PARTIAL;PARTIAL;PARTIAL;6.5;5,8;1;,20000;1,16000;0
+CVE-2020-12039;Baxter Sigma Spectrum Infusion Pumps Sigma Spectrum Infusion System v's6.x model 35700BAX & Baxter Spectrum Infusion System v's8.x model 35700BAX2 contain hardcoded passwords when physically entered on the keypad provide access to biomedical menus including device settings, view calibration values, network configuration of Sigma Spectrum WBM if installed.;LOW;NONE;PARTIAL;NONE;NONE;3.9;2,1;3;,60000;1,26000;1
+CVE-2020-8788;Synaptive Medical ClearCanvas ImageServer 3.0 Alpha allows XSS (and HTML injection) via the Default.aspx UserName parameter. NOTE: the issues/227 reference does not imply that the affected product can be downloaded from GitHub. It was simply a convenient location for a public bug report.;MEDIUM;NONE;NONE;PARTIAL;NONE;8.6;4,3;1;,20000;,86000;0
 
 
-TOTAL PRODUCTS; 6
+TOTAL PRODUCTS; 5
