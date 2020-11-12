@@ -1,6 +1,0 @@
-CATEGORY; SUMMARY; NUMBER_OF_VULNERABILITIES; AVERAGE_SCORE; PRESENCE; IMPACT 
-NVD-CWE-noinfo;Category with no information;1;7,5;,16670;1,25020;
-CWE-255;Weaknesses in this category are related to the management of credentials.;5;10,0;,83330;8,33300;
-
-
-TOTAL PRODUCTS; 6

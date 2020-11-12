@@ -1,8 +1,3 @@
-CATEGORY; SUMMARY; NUMBER_OF_VULNERABILITIES; AVERAGE_SCORE; PRESENCE; IMPACT 
-CWE-79;Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'). The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users.;1;4,3;,16670;,71680;
-CWE-798;Use of Hard-coded Credentials. The software contains hard-coded credentials, such as a password or cryptographic key, which it uses for its own inbound authentication, outbound communication to external components, or encryption of internal data. Hard-coded credentials typically create a significant hole that allows an attacker to bypass the authentication that has been configured by the software administrator. This hole might be difficult for the system administrator to detect. Even if detected, it can be difficult to fix, so the administrator may be forced into disabling the product entirely.;1;2,1;,16670;,35010;
-CWE-20;Improper Input Validation. The product does not validate or incorrectly validates input that can affect the control flow or data flow of a program. When software does not validate input properly, an attacker is able to craft the input in a form that is not expected by the rest of the application. This will lead to parts of the system receiving unintended input, which may result in altered control flow, arbitrary control of a resource, or arbitrary code execution.;1;5,8;,16670;,96690;
-CWE-120;Buffer Copy without Checking Size of Input ('Classic Buffer Overflow');3;5,8;,50000;2,90000;
-
-
-TOTAL PRODUCTS; 6
+version https://git-lfs.github.com/spec/v1
+oid sha256:565de61082df3fe2c1af095faf32523165b8ded8e5d77924dc059478674cb269
+size 4052

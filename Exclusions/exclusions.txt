@@ -60,3 +60,6 @@ CVE-2020-2094;Jenkins Health Advisor by CloudBees Plugin 3.0 está orientado a no
 CVE-2020-8572;Element HealthTools no es un sistema de apoyo al paciente sino por el contrario se utiliza para monitorear aplicativos y sistemas.
 CVE-2019-17390;Outlook add-in in Pronestor Planner es un monitor de salud de sistemas que no están relacionados propiamente con salud
 CVE-2020-11590;Se refiere a un software de planificación CIPPlanner y al no estar realcionado directamente con el ámbito médico, se lo descarta
+CVE-2020-1548;Hace referencia al complemento Windows WaasMedic Service, enfocado al soporte en actualizaciones del sistema operativo Windows, se lo descarta
+CVE-2020-2258;Es un plugin enfocado al monitoreo de componentes desactualizados en software, no es inherente a la salud de un paciente por lo que se descarta
+CVE-2020-25149;Es una herramienta basada en SVN para el control de bugs de código y seguridad por lo que se descarta
