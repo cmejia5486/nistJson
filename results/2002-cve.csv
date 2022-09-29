@@ -1,0 +1,7 @@
+ENTRY; SUMMARY; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; EXPLOITABILITY; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICALITY_FOR_HEALTH; CATEGORY; YEAR 
+CVE-2001-1594;GE Healthcare eNTEGRA P&R has a password of (1) entegra for the entegra user, (2) passme for the super user of the Polestar/Polestar-i Starlink 4 upgrade, (3) 0 for the entegra user of the Codonics printer FTP service, (4) eNTEGRA for the eNTEGRA P&R user account, (5) insite for the WinVNC Login, and possibly other accounts, which has unspecified impact and attack vectors.  NOTE: it is not clear whether this password is default, hardcoded, or dependent on another system or product that requires a fixed value.;LOW;NONE;COMPLETE;COMPLETE;COMPLETE;10,0;10,0;1;,14286;1,42857;YES;CWE-255;2001
+CVE-2002-2445;GE Healthcare Millennium MG, NC, and MyoSIGHT has a default password of (1) root.genie for the root user, (2) "service." for the service user, (3) admin.genie for the admin user, (4) reboot for the reboot user, and (5) shutdown for the shutdown user, which has unspecified impact and attack vectors.;LOW;NONE;COMPLETE;COMPLETE;COMPLETE;10,0;10,0;3;,42857;4,28571;YES;NVD-CWE-noinfo;2002
+CVE-2002-2446;GE Healthcare Millennium MG, NC, and MyoSIGHT has a password of insite.genieacq for the insite account that cannot be changed without disabling product functionality for remote InSite support, which has unspecified impact and attack vectors.;LOW;NONE;COMPLETE;COMPLETE;COMPLETE;10,0;10,0;3;,42857;4,28571;YES;CWE-255;2002
+
+
+TOTAL PRODUCTS; 7

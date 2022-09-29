@@ -1,0 +1,6 @@
+ENTRY; SUMMARY; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; EXPLOITABILITY; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICALITY_FOR_HEALTH; CATEGORY; YEAR 
+CVE-2004-0624;PHP remote file inclusion vulnerability in index.php for Artmedic links 5.0 (artmedic_links5) allows remote attackers to execute arbitrary PHP code by modifying the id parameter to reference a URL on a remote web server that contains the code.;LOW;NONE;PARTIAL;PARTIAL;PARTIAL;10,0;7,5;1;,50000;3,75000;NO;NVD-CWE-Other;2004
+CVE-2004-2777;GE Healthcare Centricity Image Vault 3.x has a password of (1) gemnet for the administrator account, (2) webadmin for the webadmin administrator account of the ASACA DVD library, (3) an empty value for the gemsservice account of the Ultrasound Database, and possibly (4) gemnet2002 for the gemnet2002 account of the GEMNet license server, which has unspecified impact and attack vectors.  NOTE: it is not clear whether this password is default, hardcoded, or dependent on another system or product that requires a fixed value.;LOW;NONE;COMPLETE;COMPLETE;COMPLETE;10,0;10,0;1;,50000;5,00000;YES;CWE-255;2004
+
+
+TOTAL PRODUCTS; 2
