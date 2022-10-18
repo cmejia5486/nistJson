@@ -1,5 +1,3 @@
-CATEGORY; SUMMARY; NUMBER_OF_VULNERABILITIES; NUMBER_OF_VULNERAILITIES_WITH_CRITICALITY_FOR_HEALTH; AVERAGE_SCORE; PRESENCE; IMPACT 
-CWE-255;Weaknesses in this category are related to the management of credentials.;1;1;10,0;1,00000;10,00000;
-
-
-TOTAL VULNERABILITIES; 1
+version https://git-lfs.github.com/spec/v1
+oid sha256:3f228c1581640841dc6e0914a354bb3f03bcc27f9018fce6d189112eda277d14
+size 268

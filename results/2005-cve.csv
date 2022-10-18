@@ -1,5 +1,3 @@
-ENTRY; SUMMARY; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; EXPLOITABILITY; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICALITY_FOR_HEALTH; CATEGORY; YEAR 
-CVE-2005-2285;WebEOC before 6.0.2 stores sensitive information in locations such as URIs, web pages, and configuration files, which allows remote attackers to obtain information such as Usernames, Passwords, Emergency information, medical information, and system configuration.;LOW;NONE;PARTIAL;NONE;NONE;10,0;5,0;1;1,00000;5,00000;NO;NVD-CWE-Other;2005
-
-
-TOTAL PRODUCTS; 1
+version https://git-lfs.github.com/spec/v1
+oid sha256:79db178b91f4dee08f5d620f3c0a8c81b8ffed5d5b492741c5fcbca611dc3eb6
+size 566

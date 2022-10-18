@@ -1,6 +1,3 @@
-CATEGORY; SUMMARY; NUMBER_OF_VULNERABILITIES; NUMBER_OF_VULNERAILITIES_WITH_CRITICALITY_FOR_HEALTH; AVERAGE_SCORE; PRESENCE; IMPACT 
-NVD-CWE-noinfo;Category with no information;1;0;7,5;,16670;1,25020;
-CWE-255;Weaknesses in this category are related to the management of credentials.;5;5;10,0;,83330;8,33300;
-
-
-TOTAL VULNERABILITIES; 6
+version https://git-lfs.github.com/spec/v1
+oid sha256:52049e4cb9a7165742e720c3797e851112f800c64d4d880638693aa7c10858d0
+size 334

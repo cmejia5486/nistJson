@@ -1,10 +1,3 @@
-ENTRY; SUMMARY; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; EXPLOITABILITY; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICALITY_FOR_HEALTH; CATEGORY; YEAR 
-CVE-2010-3593;Unspecified vulnerability in the Health Sciences - Oracle Argus Safety component in Oracle Industry Applications 5.0, 5.0.1, 5.0.2, and 5.0.3 allows remote attackers to affect confidentiality, integrity, and availability via unknown vectors related to Login and LDAP.;LOW;NONE;PARTIAL;PARTIAL;PARTIAL;10,0;7,5;5;,45455;3,40909;NO;NVD-CWE-noinfo;2010
-CVE-2010-5306;GE Healthcare Optima CT680, CT540, CT640, and CT520 has a default password of #bigguy for the root user, which has unspecified impact and attack vectors.;LOW;NONE;COMPLETE;COMPLETE;COMPLETE;10,0;10,0;3;,27273;2,72727;YES;CWE-255;2010
-CVE-2010-5307;The HIPAA configuration interface in GE Healthcare Optima MR360 has a password of (1) operator for the root account, (2) adw2.0 for the admin account, and (3) adw2.0 for the sdc account, which has unspecified impact and attack vectors.  NOTE: it is not clear whether these passwords are default, hardcoded, or dependent on another system or product that requires a fixed value.;LOW;NONE;COMPLETE;COMPLETE;COMPLETE;10,0;10,0;1;,09091;,90909;YES;CWE-255;2010
-CVE-2010-5308;GE Healthcare Optima MR360 does not require authentication for the HIPAA emergency login procedure, which allows physically proximate users to gain access via an arbitrary username in the Emergency Login screen.  NOTE: this might not qualify for inclusion in CVE if unauthenticated emergency access is part of the intended security policy of the product, can be controlled by the system administrator, and is not enabled by default.;LOW;NONE;COMPLETE;COMPLETE;COMPLETE;10,0;10,0;1;,09091;,90909;YES;CWE-255;2010
-CVE-2010-5309;GE Healthcare CADStream Server has a default password of confirma for the admin user, which has unspecified impact and attack vectors.;LOW;NONE;COMPLETE;COMPLETE;COMPLETE;10,0;10,0;1;,09091;,90909;YES;CWE-255;2010
-CVE-2010-5310;The Acquisition Workstation for the GE Healthcare Revolution XQ/i has a password of adw3.1 for the sdc user, which has unspecified impact and attack vectors.  NOTE: it is not clear whether this password is default, hardcoded, or dependent on another system or product that requires a fixed value.;LOW;NONE;COMPLETE;COMPLETE;COMPLETE;10,0;10,0;1;,09091;,90909;YES;CWE-255;2010
-
-
-TOTAL PRODUCTS; 11
+version https://git-lfs.github.com/spec/v1
+oid sha256:18fbab154e43823a7ed1165ada4366b5d1ce863a2edfccc1d8b30b7054d74cc6
+size 2440
