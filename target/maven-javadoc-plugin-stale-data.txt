@@ -1,0 +1,57 @@
+@options
+@packages
+@argfile
+-classpath
+'C:/Users/Carlos/.m2/repository/com/google/code/gson/gson/2.2.2/gson-2.2.2.jar;C:/Users/Carlos/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'1.8'
+-sourcepath
+'C:/Users/Carlos/Desktop/cursos/phd/paper 1/nist/nistJson/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/Carlos/Desktop/cursos/phd/paper 1/nist/nistJson/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'nistJson 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' 'C:/Users/Carlos/Desktop/cursos/phd/paper 1/nist/nistJson/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'nistJson 1.0-SNAPSHOT API'
+nist.Functions
+nist.main
+nist.model
+nist.Utility
+'C:/Users/Carlos/Desktop/cursos/phd/paper 1/nist/nistJson/src/main/java/nist/Functions/CategoryController.java'
+'C:/Users/Carlos/Desktop/cursos/phd/paper 1/nist/nistJson/src/main/java/nist/Functions/EntryController.java'
+'C:/Users/Carlos/Desktop/cursos/phd/paper 1/nist/nistJson/src/main/java/nist/Functions/JsonProcessor.java'
+'C:/Users/Carlos/Desktop/cursos/phd/paper 1/nist/nistJson/src/main/java/nist/main/main.java'
+'C:/Users/Carlos/Desktop/cursos/phd/paper 1/nist/nistJson/src/main/java/nist/main/main1.java'
+'C:/Users/Carlos/Desktop/cursos/phd/paper 1/nist/nistJson/src/main/java/nist/model/Category.java'
+'C:/Users/Carlos/Desktop/cursos/phd/paper 1/nist/nistJson/src/main/java/nist/model/Entry.java'
+'C:/Users/Carlos/Desktop/cursos/phd/paper 1/nist/nistJson/src/main/java/nist/Utility/Functions.java'
+C:\Users\Carlos\.m2\repository\com\google\code\gson\gson\2.2.2\gson-2.2.2.jar = 1628117153190
+C:\Users\Carlos\.m2\repository\commons-io\commons-io\2.6\commons-io-2.6.jar = 1628117153409
+C:\Users\Carlos\Desktop\cursos\phd\paper 1\nist\nistJson\src\main\java = 1647735566114
+C:\Users\Carlos\Desktop\cursos\phd\paper 1\nist\nistJson\target\site\apidocs\allclasses-frame.html = 1673236045602
+C:\Users\Carlos\Desktop\cursos\phd\paper 1\nist\nistJson\target\site\apidocs\allclasses-noframe.html = 1673236045604
+C:\Users\Carlos\Desktop\cursos\phd\paper 1\nist\nistJson\target\site\apidocs\constant-values.html = 1673236045457
+C:\Users\Carlos\Desktop\cursos\phd\paper 1\nist\nistJson\target\site\apidocs\deprecated-list.html = 1673236045599
+C:\Users\Carlos\Desktop\cursos\phd\paper 1\nist\nistJson\target\site\apidocs\help-doc.html = 1673236045613
+C:\Users\Carlos\Desktop\cursos\phd\paper 1\nist\nistJson\target\site\apidocs\index-all.html = 1673236045594
+C:\Users\Carlos\Desktop\cursos\phd\paper 1\nist\nistJson\target\site\apidocs\index.html = 1673236045606
+C:\Users\Carlos\Desktop\cursos\phd\paper 1\nist\nistJson\target\site\apidocs\overview-frame.html = 1673236045243
+C:\Users\Carlos\Desktop\cursos\phd\paper 1\nist\nistJson\target\site\apidocs\overview-summary.html = 1673236045609
+C:\Users\Carlos\Desktop\cursos\phd\paper 1\nist\nistJson\target\site\apidocs\overview-tree.html = 1673236045570
+C:\Users\Carlos\Desktop\cursos\phd\paper 1\nist\nistJson\target\site\apidocs\package-list = 1673236045216
+C:\Users\Carlos\Desktop\cursos\phd\paper 1\nist\nistJson\target\site\apidocs\script.js = 1673236045617
+C:\Users\Carlos\Desktop\cursos\phd\paper 1\nist\nistJson\target\site\apidocs\stylesheet.css = 1673236045615

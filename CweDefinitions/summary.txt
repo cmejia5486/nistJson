@@ -47,3 +47,6 @@ CWE-863;Incorrect Authorization. The software performs an authorization check wh
 CWE-787;Out-of-bounds Write. The software writes data past the end, or before the beginning, of the intended buffer. 
 others;Vulnerabilities that are not classified in the cve list
 CWE-276;Incorrect Default Permissions (During installation, installed file permissions are set to allow anyone to modify those files).
+CWE-312;Storage of sensitive information in cleartext within a resource that might be accessible to another control sphere.
+CWE-347;Lack of verify, or incorrectly verifies, the cryptographic signature for data
+CWE-918;Receiving of a URL or similar request from an upstream component and retrieves the contents of this URL, but it does not sufficiently ensure that the request is being sent to the expected destination

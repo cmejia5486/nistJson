@@ -81,3 +81,8 @@ CVE-2021-31379;Juniper Junos OS es un sistema operativo asociado a telecomunicac
 CVE-2021-36948;Está relacionado a una vulnerabilidad en Microsoft windows y no netamente a un sistema de monitoreo de la salud del paciente.
 CVE-2021-44023;Trend Micro Security 2021 es una solución antivirus de softare, no está relacionado a la criticidad en la salud de un paciente
 CVE-2021-44160;El sistema de informes de salud del hospital carinal Tien es iherente a reportería hospitalaria, no al monitoreo en la salud de un paciente directamente
+CVE-2022-20821;Se descarta, es inherente a componentes de interconectividad Cisco (Networking)
+CVE-2022-23711;Elastic Stack monitoring es usado para monitoreo de aplicaciones en la nube.
+CVE-2022-24337;JetBrains es un proveedor de IDE, no se relaciona con soporte para pacientes.
+CVE-2022-29153;HashiCorp Consul and Consul Enterprise están relacionados con una solución para el servicio de networking que busca automatizar las configuraciones de red.
+CVE-2022-29224;Está relacionado con un proxy de alto rendimiento para la nube.

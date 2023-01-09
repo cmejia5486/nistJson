@@ -215,10 +215,12 @@ public class JsonProcessor {
     }
 
     public void cweToCSV(String namefile, boolean removeFileIfExists) throws IOException {
+        System.out.println("namefile: " + namefile);
+
         Integer i = 0;
         DecimalFormat df = new DecimalFormat("#.00000");
         StringBuilder sb = new StringBuilder();
-        sb.append("CATEGORY; SUMMARY; NUMBER_OF_VULNERABILITIES; NUMBER_OF_VULNERAILITIES_WITH_CRITICALITY_FOR_HEALTH; AVERAGE_SCORE; PRESENCE; IMPACT \n");
+        sb.append("CATEGORY; SUMMARY; NUMBER_OF_VULNERABILITIES; NUMBER_OF_VULNERAILITIES_WITH_CRITICALITY_FOR_HEALTH; AVERAGE_SCORE; PRESENCE; IMPACT; VULNERABLE_SOFTWARE \n");
 
         for (Category c : cweCategories) {
 
@@ -249,7 +251,20 @@ public class JsonProcessor {
 
             // COL 7 (impact)
             sb.append(df.format(BigDecimal.valueOf(c.getImpact())).replace(".", ","));
-            sb.append(";\n");
+
+            // COL 8 (vulnerable_software)
+            //calcula los productos software afectados por categoría
+            HashSet<String> response = new HashSet<>();
+            c.getEntries().forEach((entry) -> {
+                entry.getVulnerableSoftware().forEach((product) -> {
+                    response.add(product);
+                });
+            });
+            int respuesta = response.size();
+            sb.append(";" + respuesta);
+            //fin calcula los productos software afectados por categoría
+
+            sb.append("\n");
         }
 
         sb.append(
@@ -271,4 +286,82 @@ public class JsonProcessor {
         FileUtils.writeStringToFile(file, content, Charset.forName("UTF-8"), true);
     }
 
+    public void softwareToCSV(String namefile, boolean removeFileIfExists) throws IOException {
+        System.out.println("namefile: " + namefile);
+        HashSet<String> response = new HashSet<>();
+        Integer i = 0;
+        DecimalFormat df = new DecimalFormat("#.00000");
+        StringBuilder sb = new StringBuilder();
+        sb.append("SOFTWARE_PRODUCT; NUMBER_OF_VULNERABILITIES; cve; NUMBER_OF_VULNERAILITIES_WITH_CRITICALITY_FOR_HEALTH; cve2 \n");
+
+        // INICIO COL 1 PRODUCT NAMES
+        for (Category c : cweCategories) {
+            c.getEntries().forEach((entry) -> {
+                entry.getVulnerableSoftware().forEach((product) -> {
+                    // System.out.println("Modifico el sw: " + product);
+                    product = product.replace(":*", "");
+                    product = product.replace("cpe:2.3:h:", "");
+                    product = product.replace("cpe:2.3:a:", "");
+                    product = product.replace("cpe:2.3:o:", "");
+                    String[] parts = product.split(":");
+                    if (parts.length > 1) {
+                        if (parts[1].contains("_")) {
+                            parts[1] = parts[1].substring(0, parts[1].indexOf("_"));
+                        }
+                        product = parts[0] + ":" + parts[1];
+
+                    }
+
+                    // System.out.println("Product resultante: " + product);
+                    response.add(product);
+                });
+            });
+        }
+        // FIN COL 1 PRODUCT NAMES
+
+        for (String productName : response) {
+            int contador = 0;
+            int contador1 = 0;
+            String v1 = "";
+            String v2 = "";
+            for (Category c : cweCategories) {
+                for (Entry vulnerability : c.getEntries()) {
+                    for (String software : vulnerability.getVulnerableSoftware()) {
+                        if (software.contains(productName)) {
+                            v1 = v1 + ", " + vulnerability.getID();
+                            contador = contador + 1;
+                            if (vulnerability.getRankingForHealth() == 1) {
+                                v2 = v2 + ", " + vulnerability.getID();
+                                contador1 = contador1 + 1;
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+            // productName = productName.replace(":*", "");
+            // productName = productName.replace("cpe:2.3:h:", "");
+            // productName = productName.replace("cpe:2.3:a:", "");
+            // productName = productName.replace("cpe:2.3:o:", "");
+
+            // System.out.println("el v1 fue: "+v1);
+            //System.out.println("el v2 fue: "+v2);
+            sb.append((productName + ";"));
+            sb.append((contador + ";"));
+            sb.append((v1 + ";"));
+            sb.append((contador1 + ";"));
+            sb.append((v2 + "\n"));
+
+            System.out.println("el software: " + productName + " se encuentra presente en: " + contador + " vulnerabilidades: " + v1);
+        }
+
+        String content = sb.toString();
+        File file = new File(namefile);
+        if (removeFileIfExists
+                && file.exists()) {
+            file.delete();
+        }
+        file.createNewFile();
+        FileUtils.writeStringToFile(file, content, Charset.forName("UTF-8"), true);
+    }
 }

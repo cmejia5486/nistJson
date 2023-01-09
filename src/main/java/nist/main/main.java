@@ -25,7 +25,7 @@ public class main {
             //fill keywords for searching
             keys.add("HEALTH");
             keys.add("MEDIC");
-            for (int i = 2002; i < 2022; i++) {
+            for (int i = 2002; i < 2023; i++) {
 
                 //load  json file
                 JsonObject jsonObject = new JsonParser().parse(new FileReader("JsonData/nvdcve-1.1-" + i + ".json")).getAsJsonObject();
@@ -34,6 +34,7 @@ public class main {
                 //export data to csv format
                 jsonProcessor.cveToCSV("results/" + i + "-cve.csv", true);
                 jsonProcessor.cweToCSV("results/" + i + "-cwe.csv", true);
+                jsonProcessor.softwareToCSV("results/" + i + "-swProducts.csv", true);
             }
             JsonObject jsonObject = new JsonParser().parse(new FileReader(Functions.FILETOTAL)).getAsJsonObject();
             //create a json processor for having data
@@ -41,6 +42,7 @@ public class main {
             //export data to csv format
             jsonProcessor.cveToCSV("results/Total-cve.csv", true);
             jsonProcessor.cweToCSV("results/Total-cwe.csv", true);
+            jsonProcessor.softwareToCSV("results/Total-swProducts.csv", true);
         } catch (Exception e) {
             System.out.println("error: " + e);
         }

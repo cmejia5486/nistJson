@@ -297,9 +297,7 @@ public class EntryController {
                 response = healthValue.getRankingForHealth();
                 break;
             }
-        }
-        System.out.println("response: "+response);
-                
+        }                
         return response;
     }
     
