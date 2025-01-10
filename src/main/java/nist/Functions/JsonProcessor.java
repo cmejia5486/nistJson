@@ -1,211 +1,153 @@
 package nist.Functions;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonToken;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.charset.Charset;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import nist.model.Category;
 import nist.model.Entry;
 import org.apache.commons.io.FileUtils;
 
 public class JsonProcessor {
 
-    private JsonNode json; // Reemplaza JsonObject por JsonNode
-    private ArrayNode vulnerabilities; // Reemplaza JsonArray por ArrayNode
-    private EntryController entryController;
-    private CategoryController categoryController;
+    private final JsonParser parser; // JsonParser para procesamiento por streaming
+    private final List<String> keys;
+    private final EntryController entryController;
+    private final CategoryController categoryController;
 
-    private List<Entry> cveEntries;
-    private List<Category> cweCategories;
+    private final List<Entry> cveEntries;
+    private final List<Category> cweCategories;
+    private final Set<String> cwesHash;
 
-    private HashSet<String> cwesHash;
-    private List<String> keys;
-
-    private final ObjectMapper objectMapper = new ObjectMapper(); // Jackson ObjectMapper para parseo
-
-    private void init() {
-        keys = new ArrayList<>();
-        cwesHash = new HashSet<>();
-        cveEntries = new ArrayList<>();
-        cweCategories = new ArrayList<>();
-        entryController = new EntryController();
-        categoryController = new CategoryController();
-    }
-
-    public JsonProcessor() {
-        init();
-    }
-
-    public JsonProcessor(JsonNode json, List<String> keys) {
-        init();
+    public JsonProcessor(JsonParser parser, List<String> keys) {
+        this.parser = parser;
         this.keys = keys;
-        this.json = json;
-        this.vulnerabilities = (ArrayNode) json.get("CVE_Items"); // Obtener el array
+        this.entryController = new EntryController();
+        this.categoryController = new CategoryController();
+        this.cveEntries = new ArrayList<>();
+        this.cweCategories = new ArrayList<>();
+        this.cwesHash = new HashSet<>();
         iterateVulnerabilities();
         fillCweCategories();
     }
 
-    public JsonNode getJson() {
-        return json;
-    }
-
-    public void setJson(JsonNode json) {
-        this.json = json;
-    }
-
-    public List<Entry> getCveEntries() {
-        return cveEntries;
-    }
-
-    public List<Category> getCweCategories() {
-        return cweCategories;
-    }
-
-    public void setCweCategories(List<Category> cweCategories) {
-        this.cweCategories = cweCategories;
-    }
-
-    // Métodos
     private void iterateVulnerabilities() {
-        for (JsonNode vulnerability : vulnerabilities) {
-            fillcveEntries((ObjectNode) vulnerability);
+        try {
+            while (parser.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = parser.getCurrentName();
+                if ("CVE_Items".equals(fieldName)) {
+                    parser.nextToken(); // Avanza al inicio del array
+                    while (parser.nextToken() != JsonToken.END_ARRAY) {
+                        processVulnerability();
+                    }
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error while iterating vulnerabilities: " + e.getMessage());
+        }
+    }
+
+    private void processVulnerability() {
+        try {
+            Entry entry = entryController.fill(parser.readValueAsTree(), keys);
+            if (entry != null) {
+                cwesHash.add(entry.getCategory());
+                cveEntries.add(entry);
+            }
+        } catch (IOException e) {
+            System.err.println("Error processing vulnerability: " + e.getMessage());
         }
     }
 
     private void fillCweCategories() {
-        for (String cwe : cwesHash) {
-            cweCategories.add(categoryController.fill(cveEntries, cwe));
-        }
-    }
-
-    private void fillcveEntries(ObjectNode vuln) {
-        Entry revisar = entryController.fill(vuln, keys);
-        if (revisar != null) {
-            cwesHash.add(revisar.getCategory());
-            cveEntries.add(revisar);
-        }
+        cwesHash.forEach(cwe -> cweCategories.add(categoryController.fill(cveEntries, cwe)));
     }
 
     public void cveToCSV(String namefile, boolean removeFileIfExists) throws IOException {
-        Double a, b;
-        String year = "";
-        String criticality = "";
         Set<String> uniqueProducts = new HashSet<>();
         DecimalFormat df = new DecimalFormat("#.00000");
         StringBuilder sb = new StringBuilder();
 
-        sb.append("ENTRY; SUMMARY; ACCESS_COMPLEXITY; AUTHENTICATION; CONFIDENTIALITY; INTEGRITY; AVAILABILITY; EXPLOITABILITY; SCORE; PRODUCTS_AFFECTED; PRESENCE; IMPACT; CRITICALITY_FOR_HEALTH; CATEGORY; YEAR \n");
-
-        // Generar productos únicos
-        for (Entry cveEntry : cveEntries) {
-            uniqueProducts.addAll(cveEntry.getVulnerableSoftware());
-        }
+        sb.append("ENTRY;SUMMARY;ACCESS_COMPLEXITY;AUTHENTICATION;CONFIDENTIALITY;INTEGRITY;AVAILABILITY;EXPLOITABILITY;SCORE;PRODUCTS_AFFECTED;PRESENCE;IMPACT;CRITICALITY_FOR_HEALTH;CATEGORY;YEAR\n");
 
         for (Entry entry : cveEntries) {
-            sb.append(entry.getId()).append(";");
-            sb.append(entry.getSummary().replace(";", ",")).append(";");
-            sb.append(entry.getAccessComplexity()).append(";");
-            sb.append(entry.getAuthentication()).append(";");
-            sb.append(entry.getConfidentiality()).append(";");
-            sb.append(entry.getIntegrity()).append(";");
-            sb.append(entry.getAvailability()).append(";");
-            sb.append((entry.getExploitability() + "").replace(".", ",")).append(";");
-            sb.append((entry.getScore() + "").replace(".", ",")).append(";");
-            sb.append(entry.getVulnerableSoftware().size()).append(";");
+            uniqueProducts.addAll(entry.getVulnerableSoftware());
 
-            a = (double) entry.getVulnerableSoftware().size();
-            b = (double) uniqueProducts.size();
-            sb.append(df.format(BigDecimal.valueOf(a / b)).replace(".", ",")).append(";");
-            sb.append(df.format(BigDecimal.valueOf(entry.getScore() * (a / b))).replace(".", ",")).append(";");
+            sb.append(entry.getId()).append(";")
+                    .append(entry.getSummary().replace(";", ",")).append(";")
+                    .append(entry.getAccessComplexity()).append(";")
+                    .append(entry.getAuthentication()).append(";")
+                    .append(entry.getConfidentiality()).append(";")
+                    .append(entry.getIntegrity()).append(";")
+                    .append(entry.getAvailability()).append(";")
+                    .append(df.format(entry.getExploitability()).replace(".", ",")).append(";")
+                    .append(df.format(entry.getScore()).replace(".", ",")).append(";")
+                    .append(entry.getVulnerableSoftware().size()).append(";")
+                    .append(df.format((double) entry.getVulnerableSoftware().size() / uniqueProducts.size()).replace(".", ",")).append(";")
+                    .append(df.format(entry.getScore() * entry.getVulnerableSoftware().size() / uniqueProducts.size()).replace(".", ",")).append(";");
 
-            if (entry.getRankingForHealth() == 0 || entry.getRankingForHealth() == 1) {
-                criticality = entry.getRankingForHealth() == 0 ? "NO" : "YES";
-            } else {
-                criticality = "No sabe";
-            }
-            sb.append(criticality).append(";");
-            sb.append(entry.getCategory()).append(";");
-
-            year = entry.getId().replace("CVE-", "").split("-")[0];
-            sb.append(year).append("\n");
+            String criticality = entry.getRankingForHealth() == 0 ? "NO" :
+                                 entry.getRankingForHealth() == 1 ? "YES" : "No sabe";
+            sb.append(criticality).append(";")
+                    .append(entry.getCategory()).append(";")
+                    .append(entry.getId().split("-")[1]).append("\n");
         }
 
-        sb.append("\n\nTOTAL PRODUCTS; ").append(uniqueProducts.size());
-
+        sb.append("\nTOTAL PRODUCTS;").append(uniqueProducts.size());
         writeToFile(namefile, sb.toString(), removeFileIfExists);
     }
 
     public void cweToCSV(String namefile, boolean removeFileIfExists) throws IOException {
-        System.out.println("namefile: " + namefile);
-
         DecimalFormat df = new DecimalFormat("#.00000");
         StringBuilder sb = new StringBuilder();
-        sb.append("CATEGORY; SUMMARY; NUMBER_OF_VULNERABILITIES; NUMBER_OF_VULNERABILITIES_WITH_CRITICALITY_FOR_HEALTH; AVERAGE_SCORE; PRESENCE; IMPACT; VULNERABLE_SOFTWARE \n");
+        sb.append("CATEGORY;SUMMARY;NUMBER_OF_VULNERABILITIES;NUMBER_OF_VULNERABILITIES_WITH_CRITICALITY_FOR_HEALTH;AVERAGE_SCORE;PRESENCE;IMPACT;VULNERABLE_SOFTWARE\n");
 
         int totalVulnerabilities = 0;
-
-        for (Category c : cweCategories) {
-            sb.append(c.getID()).append(";");
-            sb.append(c.getSummary().replace(";", ",")).append(";");
-            sb.append((c.getNumber_of_vulnerabilities() + "").replace(".", ",")).append(";");
-            totalVulnerabilities += c.getNumber_of_vulnerabilities();
-            sb.append(c.getNumber_of_criticality_for_health_vulnerabilities()).append(";");
-            sb.append((c.getAverage_score() + "").replace(".", ",")).append(";");
-            sb.append(df.format(BigDecimal.valueOf(c.getPresence())).replace(".", ",")).append(";");
-            sb.append(df.format(BigDecimal.valueOf(c.getImpact())).replace(".", ",")).append(";");
+        for (Category category : cweCategories) {
+            sb.append(category.getID()).append(";")
+                    .append(category.getSummary().replace(";", ",")).append(";")
+                    .append(category.getNumber_of_vulnerabilities()).append(";")
+                    .append(category.getNumber_of_criticality_for_health_vulnerabilities()).append(";")
+                    .append(df.format(category.getAverage_score()).replace(".", ",")).append(";")
+                    .append(df.format(category.getPresence()).replace(".", ",")).append(";")
+                    .append(df.format(category.getImpact()).replace(".", ",")).append(";");
 
             Set<String> uniqueSoftware = new HashSet<>();
-            c.getEntries().forEach(entry -> uniqueSoftware.addAll(entry.getVulnerableSoftware()));
+            category.getEntries().forEach(entry -> uniqueSoftware.addAll(entry.getVulnerableSoftware()));
             sb.append(uniqueSoftware.size()).append("\n");
+
+            totalVulnerabilities += category.getNumber_of_vulnerabilities();
         }
 
-        sb.append("\n\nTOTAL VULNERABILITIES; ").append(totalVulnerabilities);
-
+        sb.append("\nTOTAL VULNERABILITIES;").append(totalVulnerabilities);
         writeToFile(namefile, sb.toString(), removeFileIfExists);
     }
 
     public void softwareToCSV(String namefile, boolean removeFileIfExists) throws IOException {
-        System.out.println("namefile: " + namefile);
-        HashSet<String> uniqueProducts = new HashSet<>();
-        StringBuilder sb = new StringBuilder();
-        sb.append("SOFTWARE_PRODUCT; NUMBER_OF_VULNERABILITIES; cve; NUMBER_OF_VULNERABILITIES_WITH_CRITICALITY_FOR_HEALTH; cve2 \n");
+        Map<String, Integer> softwareCounts = new HashMap<>();
+        Map<String, Integer> criticalCounts = new HashMap<>();
 
-        for (Category c : cweCategories) {
-            c.getEntries().forEach(entry -> uniqueProducts.addAll(entry.getVulnerableSoftware()));
-        }
-
-        for (String productName : uniqueProducts) {
-            int count = 0, criticalCount = 0;
-            StringBuilder cves = new StringBuilder(), criticalCves = new StringBuilder();
-
-            for (Category c : cweCategories) {
-                for (Entry e : c.getEntries()) {
-                    if (e.getVulnerableSoftware().contains(productName)) {
-                        cves.append(", ").append(e.getId());
-                        count++;
-                        if (e.getRankingForHealth() == 1) {
-                            criticalCves.append(", ").append(e.getId());
-                            criticalCount++;
-                        }
+        for (Category category : cweCategories) {
+            for (Entry entry : category.getEntries()) {
+                for (String software : entry.getVulnerableSoftware()) {
+                    softwareCounts.put(software, softwareCounts.getOrDefault(software, 0) + 1);
+                    if (entry.getRankingForHealth() == 1) {
+                        criticalCounts.put(software, criticalCounts.getOrDefault(software, 0) + 1);
                     }
                 }
             }
-
-            sb.append(productName).append(";");
-            sb.append(count).append(";");
-            sb.append(cves).append(";");
-            sb.append(criticalCount).append(";");
-            sb.append(criticalCves).append("\n");
         }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("SOFTWARE_PRODUCT;NUMBER_OF_VULNERABILITIES;NUMBER_OF_CRITICAL_VULNERABILITIES\n");
+        softwareCounts.forEach((product, count) -> {
+            int criticalCount = criticalCounts.getOrDefault(product, 0);
+            sb.append(product).append(";").append(count).append(";").append(criticalCount).append("\n");
+        });
 
         writeToFile(namefile, sb.toString(), removeFileIfExists);
     }
