@@ -2,7 +2,6 @@ package nist.main;
 
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
@@ -14,6 +13,7 @@ public class main {
 
     public static void main(String[] args) {
         try {
+            System.out.println("Welcome to Nist Json: Open-Source Tool for Json Processing and Software Vulnerabilities Analysis Based on NIST NVD");
             List<String> keys = new ArrayList<>();
             keys.add("HEALTH");
             keys.add("MEDIC");
@@ -34,7 +34,7 @@ public class main {
                     jsonProcessor.cveToCSV("results/" + i + "-cve.csv", true);
                     jsonProcessor.cweToCSV("results/" + i + "-cwe.csv", true);
                     jsonProcessor.softwareToCSV("results/" + i + "-swProducts.csv", true);
-                    System.out.println("año procesado: "+i);
+                    System.out.println("year processed: "+i);
                 } catch (IOException e) {
                     System.err.println("Error processing file " + file.getName() + ": " + e.getMessage());
                 }
@@ -47,7 +47,7 @@ public class main {
                 jsonProcessor.cveToCSV("results/Total-cve.csv", true);
                 jsonProcessor.cweToCSV("results/Total-cwe.csv", true);
                 jsonProcessor.softwareToCSV("results/Total-swProducts.csv", true);
-                System.out.println("se procesó el archivo total");
+                System.out.println("The entire file was processed");
             }
 
         } catch (Exception e) {
