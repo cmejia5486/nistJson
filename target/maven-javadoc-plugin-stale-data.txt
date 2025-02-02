@@ -1,0 +1,52 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'C:/Users/Carlos/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar;C:/Users/Carlos/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar;C:/Users/Carlos/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar;C:/Users/Carlos/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'1.8'
+-sourcepath
+'C:/nist666/nistJson/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/nist666/nistJson/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'nistJson 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' 'C:/nist666/nistJson/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'nistJson 1.0-SNAPSHOT API'
+nist.Functions
+nist.main
+nist.model
+nist.Utility
+C:\Users\Carlos\.m2\repository\commons-io\commons-io\2.16.1\commons-io-2.16.1.jar = 1733799718923
+C:\Users\Carlos\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.2\jackson-databind-2.15.2.jar = 1736390595133
+C:\Users\Carlos\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.2\jackson-core-2.15.2.jar = 1736390594532
+C:\Users\Carlos\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.2\jackson-annotations-2.15.2.jar = 1736390594394
+C:\nist666\nistJson\src\main\java = 1738189260410
+C:\nist666\nistJson\target\reports\apidocs\allclasses-frame.html = 1738204118914
+C:\nist666\nistJson\target\reports\apidocs\allclasses-noframe.html = 1738204118917
+C:\nist666\nistJson\target\reports\apidocs\constant-values.html = 1738204118811
+C:\nist666\nistJson\target\reports\apidocs\deprecated-list.html = 1738204118905
+C:\nist666\nistJson\target\reports\apidocs\help-doc.html = 1738204118929
+C:\nist666\nistJson\target\reports\apidocs\index-all.html = 1738204118898
+C:\nist666\nistJson\target\reports\apidocs\index.html = 1738204118920
+C:\nist666\nistJson\target\reports\apidocs\overview-frame.html = 1738204118746
+C:\nist666\nistJson\target\reports\apidocs\overview-summary.html = 1738204118924
+C:\nist666\nistJson\target\reports\apidocs\overview-tree.html = 1738204118878
+C:\nist666\nistJson\target\reports\apidocs\package-list = 1738204118738
+C:\nist666\nistJson\target\reports\apidocs\script.js = 1738204118936
+C:\nist666\nistJson\target\reports\apidocs\stylesheet.css = 1738204118934
