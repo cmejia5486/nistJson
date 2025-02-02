@@ -133,6 +133,9 @@ NistJson represents a Java console-oriented application meticulously designed fo
 ## Demo
 [Demo video](https://youtu.be/LmwGtRXYmxI?si=MOAlIm66rHSoARXy)
 
+## Technical Documentation Manual
+[JavaDoc](target/reports/apidocs/index.html)
+
 ## **License:**
 This project is licensed under the GNU General Public License Version 3 - see the [LICENSE](https://github.com/cmejia5486/nistJson/blob/main/LICENSE) file for details. 
 
