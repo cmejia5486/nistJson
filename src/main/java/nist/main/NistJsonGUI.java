@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * The {@code NistJsonGUI} class provides a graphical user interface for processing JSON files 
@@ -141,7 +142,7 @@ public class NistJsonGUI extends JFrame {
             String[] keywordArray = keywordsField.getText().split(",");
             keywords = new ArrayList<>();
             for (String keyword : keywordArray) {
-                keywords.add(keyword.trim());
+                keywords.add(keyword.trim().toUpperCase());
             }
 
             ObjectMapper objectMapper = new ObjectMapper();

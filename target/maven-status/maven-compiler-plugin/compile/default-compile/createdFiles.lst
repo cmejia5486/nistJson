@@ -1,8 +1,10 @@
 nist\model\Category.class
 nist\Utility\Functions.class
 nist\main\main.class
+nist\main\NistJsonGUI$1.class
 nist\Functions\EntryController.class
 nist\model\Entry.class
 nist\Functions\JsonProcessor.class
 nist\main\VulnerabilityDataExporter.class
 nist\Functions\CategoryController.class
+nist\main\NistJsonGUI.class
