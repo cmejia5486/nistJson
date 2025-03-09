@@ -11,7 +11,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 /**
  * The {@code NistJsonGUI} class provides a graphical user interface for processing JSON files 
@@ -62,22 +61,22 @@ public class NistJsonGUI extends JFrame {
         inputPanel.add(keywordsField);
 
         // Select JSON Directory button
-        selectJsonDirectoryButton = new JButton("Select JSON Directory");
+        selectJsonDirectoryButton = new JButton("1. Select JSON Directory");
         selectJsonDirectoryButton.addActionListener(e -> selectJsonDirectory());
         inputPanel.add(selectJsonDirectoryButton);
 
         // Select Output Directory button
-        selectOutputDirectoryButton = new JButton("Select Output Directory");
+        selectOutputDirectoryButton = new JButton("2. Select Output Results Directory");
         selectOutputDirectoryButton.addActionListener(e -> selectOutputDirectory());
         inputPanel.add(selectOutputDirectoryButton);
 
         // Process button
-        processButton = new JButton("Process JSON Data");
+        processButton = new JButton("3. Process JSON Data");
         processButton.addActionListener(e -> processJsonFiles());
         inputPanel.add(processButton);
 
         // Restart button
-        restartButton = new JButton("Restart");
+        restartButton = new JButton("4. Clear");
         restartButton.addActionListener(e -> resetApplication()); // Restart logic
         inputPanel.add(restartButton);
 
