@@ -46,7 +46,8 @@ public class main {
             // List of keywords used for processing vulnerabilities related to health and medicine
             System.out.println("Enter the number of keywords to read");
             int numberOfWords = scanner.nextInt();
-            
+
+            // List of keywords used for processing vulnerabilities related to health and medicine
             List<String> keys = new ArrayList<>();
             //keys.add("HEALTH");
             //keys.add("MEDIC");
@@ -59,7 +60,7 @@ public class main {
             ObjectMapper objectMapper = new ObjectMapper();
             JsonFactory jsonFactory = objectMapper.getFactory();
 
-            // Process JSON files for each year from start year to end year
+            // Process JSON files for each year from 2002 to 2025
             for (int i = startYear; i <= endYear; i++) {
                 File file = new File("JsonData/nvdcve-1.1-" + i + ".json");
 
@@ -93,5 +94,5 @@ public class main {
         } catch (Exception e) {
             System.err.println("Error in main: " + e.getMessage());
         }
-    }    
+    }
 }
