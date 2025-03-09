@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import nist.Functions.JsonProcessor;
 
 /**
@@ -37,18 +38,29 @@ public class main {
     public static void main(String[] args) {
         try {
             System.out.println("Welcome to Nist Json: Open-Source Tool for Json Processing and Software Vulnerabilities Analysis Based on NIST NVD");
-
+            System.out.println("\nEnter the start year to be analyzed");
+            Scanner scanner = new Scanner(System.in);
+            int startYear = scanner.nextInt();
+            System.out.println("Enter the end year to be analyzed");
+            int endYear = scanner.nextInt();
             // List of keywords used for processing vulnerabilities related to health and medicine
+            System.out.println("Enter the number of keywords to read");
+            int numberOfWords = scanner.nextInt();
+            
             List<String> keys = new ArrayList<>();
-            keys.add("HEALTH");
-            keys.add("MEDIC");
-
+            //keys.add("HEALTH");
+            //keys.add("MEDIC");
+            for (int i = 1; i <= numberOfWords; i++) {
+            System.out.println("Enter keyword number "+i);
+            keys.add(scanner.next());
+            }
+            scanner.close();
             // Create ObjectMapper and JsonFactory instances
             ObjectMapper objectMapper = new ObjectMapper();
             JsonFactory jsonFactory = objectMapper.getFactory();
 
-            // Process JSON files for each year from 2002 to 2025
-            for (int i = 2002; i < 2026; i++) {
+            // Process JSON files for each year from start year to end year
+            for (int i = startYear; i <= endYear; i++) {
                 File file = new File("JsonData/nvdcve-1.1-" + i + ".json");
 
                 // Create JsonParser associated with ObjectMapper
@@ -81,5 +93,5 @@ public class main {
         } catch (Exception e) {
             System.err.println("Error in main: " + e.getMessage());
         }
-    }
+    }    
 }
