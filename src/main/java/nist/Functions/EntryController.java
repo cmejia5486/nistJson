@@ -81,7 +81,7 @@ public class EntryController {
         exclusions = new ArrayList<>();
         healthValues = new ArrayList<>();
         exclusionPath = "Exclusions/exclusions.txt";
-        healthPath = "Health/metrics.csv";
+        healthPath = "Critical/metrics.csv";
         obtainExclusions();
         obtainHealthranking();
     }
