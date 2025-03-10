@@ -3,51 +3,51 @@
 @options
 @packages
 -classpath
-'C:/Users/Carlos/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar;C:/Users/Carlos/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar;C:/Users/Carlos/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar;C:/Users/Carlos/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar'
+'C:/Users/0604140749/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar;C:/Users/0604140749/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar;C:/Users/0604140749/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar;C:/Users/0604140749/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar'
 -encoding
 'UTF-8'
 -protected
 -source
 '1.8'
 -sourcepath
-'C:/OneDrive - Universidad Regional Amazónica IKIAM/Escritorio/cursos/phd/paper 4/programa/nistJson/src/main/java'
+'C:/c/OneDrive - Universidad Regional Amazónica IKIAM/Escritorio/cursos/phd/paper 4/programa/nistJson/src/main/java'
 -author
 -bottom
 'Copyright &#169; 2025. All rights reserved.'
 -charset
 'UTF-8'
 -d
-'C:/OneDrive - Universidad Regional Amazónica IKIAM/Escritorio/cursos/phd/paper 4/programa/nistJson/target/reports/apidocs'
+'C:/c/OneDrive - Universidad Regional Amazónica IKIAM/Escritorio/cursos/phd/paper 4/programa/nistJson/target/reports/apidocs'
 -docencoding
 'UTF-8'
 -doctitle
-'nistJson 1.0-SNAPSHOT API'
+'nistJson 2.0-SNAPSHOT API'
 -linkoffline
-'https://docs.oracle.com/javase/8/docs/api' 'C:/OneDrive - Universidad Regional Amazónica IKIAM/Escritorio/cursos/phd/paper 4/programa/nistJson/target/javadoc-bundle-options'
+'https://docs.oracle.com/javase/8/docs/api' 'C:/c/OneDrive - Universidad Regional Amazónica IKIAM/Escritorio/cursos/phd/paper 4/programa/nistJson/target/javadoc-bundle-options'
 -use
 -version
 -windowtitle
-'nistJson 1.0-SNAPSHOT API'
+'nistJson 2.0-SNAPSHOT API'
 nist.Functions
 nist.main
 nist.model
 nist.Utility
-C:\Users\Carlos\.m2\repository\commons-io\commons-io\2.16.1\commons-io-2.16.1.jar = 1733799718923
-C:\Users\Carlos\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.2\jackson-databind-2.15.2.jar = 1736390595133
-C:\Users\Carlos\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.2\jackson-core-2.15.2.jar = 1736390594532
-C:\Users\Carlos\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.2\jackson-annotations-2.15.2.jar = 1736390594394
-C:\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\src\main\java = 1741497509994
-C:\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\allclasses-frame.html = 1741498375879
-C:\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\allclasses-noframe.html = 1741498375888
-C:\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\constant-values.html = 1741498375041
-C:\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\deprecated-list.html = 1741498375860
-C:\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\help-doc.html = 1741498375936
-C:\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\index-all.html = 1741498375833
-C:\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\index.html = 1741498375902
-C:\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\overview-frame.html = 1741498374631
-C:\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\overview-summary.html = 1741498375918
-C:\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\overview-tree.html = 1741498375722
-C:\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\package-list = 1741498374613
-C:\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\script.js = 1741498375967
-C:\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\serialized-form.html = 1741498375135
-C:\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\stylesheet.css = 1741498375957
+C:\Users\0604140749\.m2\repository\commons-io\commons-io\2.16.1\commons-io-2.16.1.jar = 1736272418044
+C:\Users\0604140749\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.2\jackson-databind-2.15.2.jar = 1736285310525
+C:\Users\0604140749\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.2\jackson-core-2.15.2.jar = 1736285060331
+C:\Users\0604140749\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.2\jackson-annotations-2.15.2.jar = 1736285310809
+C:\c\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\src\main\java = 1741485269542
+C:\c\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\allclasses-frame.html = 1741642076193
+C:\c\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\allclasses-noframe.html = 1741642076194
+C:\c\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\constant-values.html = 1741642076139
+C:\c\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\deprecated-list.html = 1741642076191
+C:\c\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\help-doc.html = 1741642076200
+C:\c\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\index-all.html = 1741642076188
+C:\c\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\index.html = 1741642076195
+C:\c\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\overview-frame.html = 1741642076097
+C:\c\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\overview-summary.html = 1741642076198
+C:\c\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\overview-tree.html = 1741642076180
+C:\c\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\package-list = 1741642076094
+C:\c\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\script.js = 1741642076201
+C:\c\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\serialized-form.html = 1741642076149
+C:\c\OneDrive - Universidad Regional Amazónica IKIAM\Escritorio\cursos\phd\paper 4\programa\nistJson\target\reports\apidocs\stylesheet.css = 1741498375000
